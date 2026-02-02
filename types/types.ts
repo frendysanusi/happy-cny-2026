@@ -1,0 +1,1 @@
+export type VibeMode = 'redFlag' | 'glowUp'
