@@ -1,6 +1,7 @@
 "use client"
 
 import Hero from "@/components/Hero";
+import Squad from "@/components/Squad";
 import { VibeMode } from "@/types/types"
 import { motion } from "framer-motion";
 import { Sparkles } from "lucide-react";
@@ -52,6 +53,7 @@ export default function Home() {
 
       <main className="relative z-10">
         <Hero vibe={vibe} />
+        <Squad />
       </main>
 
       <footer className="py-20 text-center opacity-50 text-sm">

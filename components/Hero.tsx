@@ -1,6 +1,5 @@
 import { VibeMode } from "@/types/types";
 import { motion } from "framer-motion";
-import React from "react";
 
 interface HeroProps {
   vibe: VibeMode
@@ -41,9 +40,9 @@ const Hero: React.FC<HeroProps> = ({ vibe }) => {
           <motion.div
             key={i}
             className="absolute bg-red-600/30 rounded-full blur-xl"
-            initial={{ 
-              x: Math.random() * window.innerWidth, 
-              y: window.innerHeight + 100,
+            initial={{
+              x: Math.random() * (typeof window !== 'undefined' ? window.innerWidth : 1920),
+              y: (typeof window !== 'undefined' ? window.innerHeight : 1080) + 100,
               width: Math.random() * 50 + 20,
               height: Math.random() * 50 + 20
             }}
@@ -66,7 +65,7 @@ const Hero: React.FC<HeroProps> = ({ vibe }) => {
         className="mt-12 text-red-500/50"
       >
         <div className="w-1 h-12 bg-linear-to-b from-red-600 to-transparent mx-auto rounded-full" />
-        <p className="text-[10px] uppercase tracking-[0.3em] mt-4 font-bold">Scroll to see the squad</p>
+        <p className="text-[10px] uppercase tracking-[0.3em] mt-4 font-bold">Scroll to see more</p>
       </motion.div>
 		</section>
 	)

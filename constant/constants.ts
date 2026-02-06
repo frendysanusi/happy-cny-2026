@@ -1,0 +1,40 @@
+import { Friend } from "@/types/types";
+
+export const SQUAD: Friend[] = [
+  {
+    id: '1',
+    name: 'Prin',
+    image: '/simpson.jpg',
+    shio: 'Goat',
+    shioIcon: '🐐',
+    message: '새해 복 많이 받으세요! 같이 돈 많이 벌고 세계 여행도 가자! ✈️💰',
+    color: 'border-yellow-500'
+  },
+  {
+    id: '2',
+    name: 'Stev',
+    image: '/edna.jpeg',
+    shio: 'Monkey',
+    shioIcon: '🐒',
+    message: 'Happy New Year! Let\'s make a lot of money and travel around the world together! ✈️💰',
+    color: 'border-red-500'
+  },
+  {
+    id: '3',
+    name: 'Sugi',
+    image: '/kuzco.jpg',
+    shio: 'Goat',
+    shioIcon: '🐐',
+    message: 'Kiong hi bang! Semoga makin ce lui ya biar wa lang explore dunia. Huat ah! ✈️💰',
+    color: 'border-cyan-500'
+  },
+  {
+    id: '4',
+    name: 'Vian',
+    image: '/mulan.jpg',
+    shio: 'Monkey',
+    shioIcon: '🐒',
+    message: '新年快乐。 让我们一起赚很多钱，周游世界吧！✈️💰',
+    color: 'border-violet-500'
+  }
+];
