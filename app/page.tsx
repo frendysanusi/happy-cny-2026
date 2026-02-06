@@ -1,5 +1,6 @@
 "use client"
 
+import AIWishGenerator from "@/components/AIWIshGenerator";
 import Angpao from "@/components/Angpao";
 import Hero from "@/components/Hero";
 import HokkienWisdom from "@/components/HokkienWisdom";
@@ -56,6 +57,7 @@ export default function Home() {
       <main className="relative z-10">
         <Hero vibe={vibe} />
         <Squad />
+        <AIWishGenerator />
         <HokkienWisdom />
         <Angpao />
       </main>
