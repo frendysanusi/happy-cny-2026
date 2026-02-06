@@ -1,4 +1,4 @@
-import { Friend } from "@/types/types";
+import { Friend, HokkienWisdom } from "@/types/types";
 
 export const SQUAD: Friend[] = [
   {
@@ -37,4 +37,15 @@ export const SQUAD: Friend[] = [
     message: '新年快乐。 让我们一起赚很多钱，周游世界吧！✈️💰',
     color: 'border-violet-500'
   }
+];
+
+export const HOKKIEN_WISDOM: HokkienWisdom[] = [
+  { phrase: "Huat Ah!", translation: "To prosper / burst with fortune!" },
+  { phrase: "Mai Siao Siao", translation: "Don't play around (be serious about your goals!)" },
+  { phrase: "Kiam Siap No More", translation: "No more being stingy - let the generosity flow!" },
+  { phrase: "Ciak Pa Boi?", translation: "Have you eaten yet? (I care abt u :D)" },
+  { phrase: "Steady Pom pi pi", translation: "Staying cool, calm, and reliable." },
+  { phrase: "Ho Se Liao", translation: "Everything is settled and excellent!" },
+  { phrase: "Ancua ho se bos?", translation: "How's your day? (hope u happy everyday everytime!)" },
+  { phrase: "Lao Hero", translation: "Old-school hero (stay legendary!)" },
 ];

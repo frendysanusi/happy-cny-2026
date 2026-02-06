@@ -9,3 +9,8 @@ export interface Friend {
   message: string;
   color: string;
 }
+
+export interface HokkienWisdom {
+  phrase: string;
+  translation: string;
+}
