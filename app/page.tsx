@@ -1,5 +1,6 @@
 "use client"
 
+import Angpao from "@/components/Angpao";
 import Hero from "@/components/Hero";
 import Squad from "@/components/Squad";
 import { VibeMode } from "@/types/types"
@@ -54,6 +55,7 @@ export default function Home() {
       <main className="relative z-10">
         <Hero vibe={vibe} />
         <Squad />
+        <Angpao />
       </main>
 
       <footer className="py-20 text-center opacity-50 text-sm">
