@@ -32,7 +32,7 @@ const HokkienWisdom: React.FC = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
-              className="space-y-4"
+              className="space-y-4 mb-16 md:mb-0"
             >
               <h3 className="text-4xl md:text-6xl font-black text-yellow-500 drop-shadow-[0_0_15px_rgba(234,179,8,0.3)]">
                 {current.phrase}

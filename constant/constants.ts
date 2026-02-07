@@ -44,7 +44,7 @@ export const HOKKIEN_WISDOM: HokkienWisdom[] = [
   { phrase: "Mai Siao Siao", translation: "Don't play around (be serious about your goals!)" },
   { phrase: "Kiam Siap No More", translation: "No more being stingy - let the generosity flow!" },
   { phrase: "Ciak Pa Boi?", translation: "Have you eaten yet? (I care abt u :D)" },
-  { phrase: "Steady Pom pi pi", translation: "Staying cool, calm, and reliable." },
+  { phrase: "Steady Pompipi", translation: "Staying cool, calm, and reliable." },
   { phrase: "Ho Se Liao", translation: "Everything is settled and excellent!" },
   { phrase: "Ancua ho se bos?", translation: "How's your day? (hope u happy everyday everytime!)" },
   { phrase: "Lao Hero", translation: "Old-school hero (stay legendary!)" },
