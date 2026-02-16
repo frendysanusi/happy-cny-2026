@@ -1,10 +1,11 @@
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { AlertCircle, Coins, Receipt } from 'lucide-react';
 
 const Angpao: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [btnPos, setBtnPos] = useState({ x: 0, y: 0 });
+  const panicAudioRef = useRef<HTMLAudioElement>(null);
 
   const handleRunAway = () => {
     // Generate random movement within a 200px range
@@ -13,8 +14,42 @@ const Angpao: React.FC = () => {
     setBtnPos({ x: newX, y: newY });
   };
 
+  const handleOpen = () => {
+    setIsOpen(true);
+    // Kill the background music immediately
+    window.dispatchEvent(new CustomEvent('stopBackgroundMusic'));
+    
+    if (panicAudioRef.current) {
+      panicAudioRef.current.volume = 1.0; // MAX VOLUME
+      panicAudioRef.current.currentTime = 0;
+      panicAudioRef.current.play().catch((error) => {
+        console.error('Panic audio failed:', error);
+      });
+    }
+  };
+
+  const handleClose = () => {
+    setIsOpen(false);
+    if (panicAudioRef.current) {
+      panicAudioRef.current.pause();
+    }
+    // Bring back the vibes
+    window.dispatchEvent(new CustomEvent('resumeBackgroundMusic'));
+  };
+
+  useEffect(() => {
+    if (panicAudioRef.current) {
+      panicAudioRef.current.volume = 1.0; 
+    }
+  }, []);
+
   return (
     <section className="py-32 px-6 flex flex-col items-center">
+      {/* Panic Audio */}
+      <audio ref={panicAudioRef} loop preload="auto">
+        <source src="/panic-1.mp3" type="audio/mpeg" />
+      </audio>
+
       <div className="text-center mb-16">
         <h2 className="text-5xl font-black tracking-tighter mb-4">THE DIGITAL ANG PAO</h2>
         <p className="text-gray-500 text-sm tracking-[0.2em] uppercase font-bold">A little something for the heart</p>
@@ -25,7 +60,7 @@ const Angpao: React.FC = () => {
           {!isOpen ? (
             <motion.div
               key="closed"
-              onClick={() => setIsOpen(true)}
+              onClick={handleOpen}
               className="w-full h-full bg-[#cc2229] rounded-4xl shadow-2xl cursor-pointer relative overflow-hidden flex flex-col items-center justify-center border-4 border-[#b11b22]"
               whileHover={{ scale: 1.05, rotate: -1 }}
               whileTap={{ scale: 0.95 }}
@@ -110,8 +145,8 @@ const Angpao: React.FC = () => {
                   </p>
                 </div>
                 
-                <button 
-                  onClick={() => setIsOpen(false)}
+                <button
+                  onClick={handleClose}
                   className="mt-8 text-[10px] font-bold uppercase tracking-widest text-red-500 hover:text-red-400 transition-colors"
                 >
                   ← Close Ang Pao

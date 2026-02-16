@@ -45,7 +45,7 @@ export default function Home() {
           <div className="flex items-center gap-4">
             <button 
               onClick={() => setVibe(vibe === 'redFlag' ? 'glowUp' : 'redFlag')}
-              className="px-4 py-2 glass rounded-full text-xs font-bold uppercase tracking-tighter flex items-center gap-2 hover:bg-white/10 transition-colors"
+              className="px-4 py-2 glass rounded-full text-xs font-bold uppercase tracking-tighter flex items-center gap-2 hover:bg-white/10 transition-colors cursor-pointer"
             >
               <Sparkles size={14} className={vibe === 'glowUp' ? 'text-yellow-400' : 'text-red-500'} />
               {vibe === 'redFlag' ? 'Red Flag' : 'Glow Up'}
@@ -57,8 +57,8 @@ export default function Home() {
       <main className="relative z-10">
         <Hero vibe={vibe} />
         <Squad />
-        <AIWishGenerator />
-        <HokkienWisdom />
+        {/* <AIWishGenerator /> */}
+        {/* <HokkienWisdom /> */}
         <Angpao />
       </main>
 
