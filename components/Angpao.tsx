@@ -47,7 +47,7 @@ const Angpao: React.FC = () => {
     <section className="py-32 px-6 flex flex-col items-center">
       {/* Panic Audio */}
       <audio ref={panicAudioRef} loop preload="auto">
-        <source src="/panic-1.mp3" type="audio/mpeg" />
+        <source src="/panic.mp3" type="audio/mpeg" />
       </audio>
 
       <div className="text-center mb-16">
